@@ -1,0 +1,152 @@
+/*
+Quando colocamos display: flex em um elemento, o navegador passa a considerar esse elemento como um flex container,
+ou seja, cria todo aquele comportamento que vimos anteriormente no curso, os filhos ficam um do lado do outro e
+ podemos aplicar propriedades para espaçá-los.
+
+Os filhos de um flex container por sua vez também ganham um nome, são chamados de flex items.
+
+Quando utilizamos flexbox temos que ficar atentos em quem colocamos as propriedades de espaçamento e 
+distribuição do flex. Por exemplo, existem algumas propriedades que devem ser aplicadas à flex container e outras 
+ue devem ser aplicadas nos flex items.
+
+
+*************************************************************************************
+flex container:
+
+justify-content, align-items, flex-direction, flex-wrap
+
+flex items:
+
+order, flex-grow, flex-shrink
+
+A propriedade display: flex pode ser usada nos dois. 
+Se for usada em um flex item esse elemento será tanto um flex item quanto um flex container.
+*************************************************************************************
+
+*/
+
+.cabecalhoPrincipal .container{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.cabecalhoPrincipal-nav{
+	display: flex;
+}/*/*
+
+/*conteudoPrincipal-cursos*/
+.conteudoPrincipal-cursos{
+	display: flex;
+	flex-wrap: wrap;
+	/*justify-content: flex-start;*/
+}
+.conteudoPrincipal-cursos-link{
+	display: flex;
+	width: 23%;
+
+}
+
+
+/*RETIRAR O MARGIN-RIGHT DOS ELEMENTOS MULTIPLOS DE 4*/
+.conteudoPrincipal-cursos-link:nth-child(4n){
+	margin-right: 0;
+}
+/*RETIRAR O MARGIN-RIGHT DOS ELEMENTOS APÓS O 4 . N COMEÇA COM 0. O SEJA, ELE IRÁ RETIRAR O PRIMEIRO 4X0=0+1 =1*/
+.conteudoPrincipal-cursos-link:nth-child(4n+1){
+	margin-right: 0;
+}
+
+/*CURSOS RODAPE*/
+
+.rodapePrincipal-navMap-list{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 250px;
+}
+
+
+/*RODAPÉ*/
+.rodapePrincipal-patrocinadores .container{
+	display: flex;
+	align-items:center;
+}
+.rodapePrincipal-patrocinadores-list{
+	display: flex;
+	align-items:center;
+	width: 75%;
+	justify-content: space-around;
+
+}
+.rodapePrincipal-contatoForm{
+	display: flex;
+	width: 25%;
+}
+.rodapePrincipal-contatoForm-fieldset{
+	display: flex;
+}
+
+
+.videoSobre .container{
+	display: flex;
+}
+.videoSobre-sobre{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1; /*PREENCHE O ESPAÇO VAZIO DOS ELEMENTOS COM O CONTEUÚDO*/
+}
+.videoSobre-sobre-list{
+	flex-grow: 1;/*OCUPA O ESPAÇO VAZIO DA PARTE INFERIOR DO ELEMENTO FLEX
+	PREENCHENDO COM OS ELEMENTOS O ESPAÇO VAZIO
+	*/
+}
+
+/*
+		PARTE MOBILE
+*/
+@media(max-width: 768px){
+	.cabecalhoPrincipal-nav{
+		flex-direction: column; 		
+	} 
+	.cabecalhoPrincipal .container{
+		flex-direction: column; 		
+		align-items: initial;/*PARA EXPANDIR OS ELEMENTOS*/
+		text-align: center;
+
+	}
+	.conteudoPrincipal-cursos{
+		flex-direction: column;
+	}
+	.conteudoPrincipal-cursos-link{
+		width: 100%;
+	}
+	.rodapePrincipal-navMap-list{
+		height: auto;
+
+	}
+
+	.rodapePrincipal-patrocinadores .container{
+		flex-direction: column;
+		align-items: initial;
+	}
+	.rodapePrincipal-patrocinadores-list{
+		justify-content: flex-start;
+		width: 100%;
+		margin: 0;
+	}	
+	.cabecalhoPrincipal-nav-link-app{/*CLASSE ESPECIFICA*/
+		order: -1;/*IRÁ TRANSFORMAR O ÚLTIMO ELEMENTO (NOSSO APP) NO PRIMEIRO ITEM DO MENU 
+		 **TAL PROPRIEDADE FUNCIONA APENAS COM DISPLAY FLEX
+		*/
+	}
+	.videoSobre .container{
+		flex-direction: column;/*COLOCA OS ELEMENTOS DO VIDEOSBORE EM COLUNAS*/
+
+	}
+	.videoSobre-video{
+		margin: 0 auto;
+		/*IFRAME É DISPLAY BLOCK, LOGO É POSSIVEL USAR MARGIN*/
+
+	}
+}

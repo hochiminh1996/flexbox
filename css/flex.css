@@ -1,0 +1,99 @@
+/*AULA Começando responsivo https://cursos.alura.com.br/course/posicione-elementos-com-flexbox/task/22651*/
+/*
+	1 : CONTAINER-FLEX;
+		DISPLAY : FLEX;
+
+		APLICADA AO ELEMENTO PAI, VISANDO ORGANIZAR O CONTAINER E ALINHAR SEUS FILHOS
+		.flex-container {
+   			 flex-direction: row | row-reverse | column | column-reverse;
+   			 //DEFINE O EIXO PRINCIPAL
+
+		     flex-wrap: nowrap | wrap | wrap-reverse;
+		    //"QUEBRA OS ITENS, CASO SEJA NECESSÁRIO"
+			
+
+			  justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+			//DEFINE O ALINHAMENTO DOS ITENS DO EIXO PRINCIPAL
+
+			
+		    align-items: stretch | flex-start | flex-end | center | baseline;
+			//De certa forma, funciona de forma similar ao justify-content,
+			 porém no eixo transversal (perpendicular ao eixo principal). Ou seja, quando usar column
+
+
+
+
+ 		 }
+*/
+
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+.flex-principal{
+	width: 90%;
+	height: 600px;	
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-around;
+	border-radius: 50%;
+	margin: 0 auto;
+
+}
+.flex-principal div:nth-child(1){border: 1px solid #f49e12 ;width: 250px;height: 250px;border-radius: 50%;background: #f49e12;}
+.flex-principal div:nth-child(1):hover{	box-shadow: 1px 1px 25px #f49e12;}
+
+.flex-principal div:nth-child(2){border: 1px solid #a92f23;width: 30px;height: 30px;border-radius: 50%;background: #a92f23;}
+.flex-principal div:nth-child(2):hover{	box-shadow: 1px 1px 25px #a92f23;}
+
+.flex-principal div:nth-child(3){border: 1px solid #e2725b;width: 50px;height: 50px;border-radius: 50%;background: #e2725b  ;}
+.flex-principal div:nth-child(3):hover{	box-shadow: 1px 1px 25px #e2725b;}
+
+.flex-principal div:nth-child(4){border: 1px solid #4169e1;width: 50px;height: 50px;border-radius: 50%;background: #4169e1  ;}
+.flex-principal div:nth-child(4):hover{	box-shadow: 1px 1px 25px #4169e1;}
+
+.flex-principal div:nth-child(5){border: 1px solid #ff0000;width: 40px;height: 40px;border-radius: 50%;background: #ff0000;}
+.flex-principal div:nth-child(5):hover{	box-shadow: 1px 1px 25px #ff0000;}
+
+.flex-principal div:nth-child(6){border: 1px solid #ff7f53;width: 100px;height: 100px;border-radius: 50%;background: #ff7f53;}
+.flex-principal div:nth-child(6):hover{	box-shadow: 1px 1px 25px #ff7f53;}
+
+.flex-principal div:nth-child(7){border: 1px solid #8d9faa;width: 65px;height: 65px;border-radius: 50%;background: #8d9faa;}
+.flex-principal div:nth-child(7):hover{	box-shadow: 1px 1px 25px #8d9faa;}
+
+.flex-principal div:nth-child(8){border: 1px solid #007892;width: 50px;height: 50px;border-radius: 50%;background: #007892;}
+.flex-principal div:nth-child(8):hover{	box-shadow: 1px 1px 25px #007892;}
+
+.flex-principal div:nth-child(9){border: 1px solid #007892;width: 50px;height: 50px;border-radius: 50%;background: #007892;}
+.flex-principal div:nth-child(9):hover{	box-shadow: 1px 1px 25px #007892;}
+
+.universo{
+	color: black;
+	font-size: 20px;
+	font-family: arial;
+	display: flex;
+	justify-content: center;
+	font-size: .7em;
+	align-items: center;	
+
+}
+.trans{
+	transition: all linear .5s;
+}
+@media(max-width: 768px){
+	*{
+		background: rgba(0,0,0,.9);
+	}
+	.flex-principal{
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		height: auto;
+		justify-content: space-between;		
+	}
+	.universo{
+		color: #ffffff;
+	}
+}
