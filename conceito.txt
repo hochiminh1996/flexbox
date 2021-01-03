@@ -1,4 +1,4 @@
-Tipos de display's
+Conceitos
 
 display: inline
 
